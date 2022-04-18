@@ -1,0 +1,29 @@
+.barra {
+     display:  flex;
+     flex-direction: column;
+     padding-top: 3rem;
+     @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+     }
+
+}
+.navegacion{
+    @include tablet{//apartir de este tamanio
+        display: flex;
+        align-items: center;
+    }
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2.2rem;
+        text-align: center;
+        display: block;
+        @include tablet{
+            margin-right: 2rem;//separacion entre enlaces de navegacion
+            &:last-of-type{//el ultimo item de navegacion
+                margin-right: 0rem;
+            }
+        }
+    }
+}
