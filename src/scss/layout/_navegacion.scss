@@ -1,17 +1,46 @@
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet{
+        align-items: flex-end;
+    }
+    .dark-mode-boton{
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        filter: invert(100%);//invierte color
+        &:hover{
+            cursor: pointer;
+        }
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+}
 .barra {
      display:  flex;
      flex-direction: column;
      padding-top: 3rem;
+     align-items: center;
      @include tablet{
-        flex-direction: row;
-        justify-content: space-between;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: flex-end;
      }
 
 }
 .navegacion{
+    //display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility .2s ease-in-out, opacity .2s linear, height .2s linear;
     @include tablet{//apartir de este tamanio
         display: flex;
         align-items: center;
+        opacity: 1;
+        visibility: visible;
     }
     a {
         color: $blanco;
@@ -26,4 +55,23 @@
             }
         }
     }
+}
+
+.mobile-menu{
+    @include tablet{
+        display: none;
+    }
+    img{
+        width: 5rem ;
+    }
+}
+.mostrar{
+    // display: flex;
+    // flex-direction: column;
+    // @include tablet{
+    //     flex-direction: row;
+    // }
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
