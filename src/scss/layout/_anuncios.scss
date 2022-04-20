@@ -1,0 +1,39 @@
+@include tablet{
+    .contenedor-anuncios{
+        @include grid(3,2rem);
+    }
+}
+
+.anuncio{
+    background-color: lighten($gris, 5);
+    border: 1px solid darken($gris, 10);
+    .contenido-anuncio{
+        padding: 2rem;
+    }
+    h3, p{
+        margin: 0;
+    }
+    
+}
+.precio{
+    color: $verde;
+    font-weight: $bold;
+    font-size: 3rem;
+}
+.iconos-caracteristicas{
+    display: flex;
+    list-style: none;//sin puntos negros
+    padding: 0;
+    max-width: 40rem;
+     li{
+        flex: 1;//cada quien toma una posicion ocupando todo elespacio en ul
+        display: flex;
+          img{
+              flex: 0 0 1.5rem;//no crece y solo da valor a la img de 3rem
+              margin-right: 0.5rem;
+            }
+          p{
+              font-weight: $black;
+          }
+     }
+}

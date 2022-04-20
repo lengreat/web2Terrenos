@@ -1,4 +1,41 @@
+.no_webp .inicio{
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio{//tiene wep y luego dentro busca inicio
+    background-image: url(../img/header.webp);//esta ruta debido a q parte del archivo compilado
+    //background-color: red;
+}
 .header {
     background-color: $grisOscuro ;
     padding: 1rem  0 3rem 1rem;
+     &.inicio{
+         background-position: center center;//se alinea la imagen al centro
+         background-size: cover;
+         @include tablet{
+             min-height: 60rem;
+         }
+         .contenido-header{
+            @include tablet{
+                min-height: 60rem;
+            }
+         }
+     }
+}
+// .header .inicio{ No funciona ya q no hay etiqueta interna inicio, es conjunta
+//     background-position: center center;//se alinea la imagen al centro
+//         background-size: cover;
+// }
+
+.contenido-header{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+
 }

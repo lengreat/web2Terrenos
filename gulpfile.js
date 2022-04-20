@@ -57,10 +57,15 @@ function versionWebp() {
 function watchArchivos() {
     watch(paths.scss, css);
     watch(paths.js, javascript);
-    watch(paths.imagenes, imagenes);
-    watch(paths.imagenes, versionWebp);
+    //watch(paths.imagenes, imagenes);
+    //watch(paths.imagenes, versionWebp);
+}
+function editionMode() {
+    watch(paths.scss, css);
+    watch(paths.js, javascript);
 }
 
 exports.css = css;
 exports.watchArchivos = watchArchivos;
+exports.editionMode = editionMode;
 exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 
